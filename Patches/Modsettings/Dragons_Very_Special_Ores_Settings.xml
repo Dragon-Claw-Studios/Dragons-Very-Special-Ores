@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+<Operation Class="XmlExtensions.CreateSettings">
+    <modId>DragonsVerySpecialOresOriginal</modId> <!--String that XML Extensions can identify your mod with-->
+    <label>Dragon's Very Special Ores</label>
+    <settings>
+	<li Class="XmlExtensions.Setting.Text">
+	    <text>Dragon's Very Special Ores</text>
+	    <font>Medium</font>
+	    <anchor>Middle</anchor>
+	</li>
+	<li Class="XmlExtensions.Setting.GapLine"/>
+	<li Class="XmlExtensions.Setting.SetColor">
+	    <color>(255,255,0)</color>
+	</li>
+	<li Class="XmlExtensions.Setting.Text">
+	    <text>Setting changes requires a restart to take effect!</text>
+	    <anchor>Middle</anchor>
+	</li>
+
+	<li Class="XmlExtensions.Setting.SetColor"/>
+	<!-- Settings - Flammability -->
+	<li Class="XmlExtensions.Setting.Gap"/>
+	<li Class="XmlExtensions.Setting.Checkbox">
+        <key>DOVSNonFlammableOres</key>
+	    <defaultValue>false</defaultValue>
+        <label>Non Flammable Ores</label>
+	    <tKey>DragonsOres_DOVSToggleFlammable</tKey>
+	    <tooltip>Sets flammability of all "Dragon's Very Special Ores" to 0, no more burning metal.</tooltip>
+	    <tKeyTip>DragonsOres_DOVSToggleFlammableTip</tKeyTip>
+    </li>
+	<!-- Settings - Enable Ores -->
+	<li Class="XmlExtensions.Setting.Gap"/>
+	<li Class="XmlExtensions.Setting.Checkbox">
+        <key>ToggleCaptolite</key>
+	    <defaultValue>true</defaultValue>
+        <label>Enable Captolite Generation</label>
+	    <tKey>DragonsVerySpecialOres_ToggleCaptolite</tKey>
+	    <tooltip>Allows Captolite to generate and be functional.</tooltip>
+	    <tKeyTip>DragonsVerySpecialOres_ToggleCaptoliteTip</tKeyTip>
+    </li>
+	<li Class="XmlExtensions.Setting.Checkbox">
+        <key>ToggleLaatim</key>
+	    <defaultValue>true</defaultValue>
+        <label>Enable Laatim Generation</label>
+	    <tKey>DragonsVerySpecialOres_ToggleLaatim</tKey>
+	    <tooltip>Allows Laatim to generate and be functional.</tooltip>
+	    <tKeyTip>DragonsVerySpecialOres_ToggleLaatimTip</tKeyTip>
+	</li>
+	<li Class="XmlExtensions.Setting.Checkbox">
+        <key>ToggleKeellikoi</key>
+	    <defaultValue>true</defaultValue>
+        <label>Enable Keellikoi Generation</label>
+	    <tKey>DragonsVerySpecialOres_ToggleKeellikoi</tKey>
+	    <tooltip>Allows Keellikoi to generate and be functional.</tooltip>
+	    <tKeyTip>DragonsVerySpecialOres_ToggleKeellikoiTip</tKeyTip>
+	</li>
+	<li Class="XmlExtensions.Setting.Checkbox">
+        <key>ToggleRoosterium</key>
+	    <defaultValue>true</defaultValue>
+        <label>Enable Roosterium Generation</label>
+	    <tKey>DragonsVerySpecialOres_ToggleRoosterium</tKey>
+	    <tooltip>Allows Roosterium to generate and be functional.</tooltip>
+	    <tKeyTip>DragonsVerySpecialOres_ToggleRoosteriumTip</tKeyTip>
+	</li>
+	<li Class="XmlExtensions.Setting.Checkbox">
+        <key>ToggleTumblum</key>
+	    <defaultValue>true</defaultValue>
+        <label>Enable Tumblum Generation</label>
+	    <tKey>DragonsVerySpecialOres_ToggleTumblum</tKey>
+	    <tooltip>Allows Tumblum to generate and be functional.</tooltip>
+	    <tKeyTip>DragonsVerySpecialOres_ToggleTumblumTip</tKeyTip>
+	</li>
+	<li Class="XmlExtensions.Setting.ResetSettings"/>
+    </settings>
+</Operation>
+
+	<!-- Patching - Flammability -->
+<Operation Class="XmlExtensions.OptionalPatch">
+    <modId>DragonsVerySpecialOresOriginal</modId>
+    <key>DOVSNonFlammableOres</key>
+    <defaultValue>false</defaultValue>
+    <caseTrue>
+		<Operation Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="Captolite"]/stuffProps/statFactors/Flammability</xpath>
+			<value>
+				<Flammability>0</Flammability>
+			</value>
+		</Operation>
+		<Operation Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="Laatim"]/stuffProps/statFactors/Flammability</xpath>
+			<value>
+				<Flammability>0</Flammability>
+			</value>
+		</Operation>
+		<Operation Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="Keellikoi"]/stuffProps/statFactors/Flammability</xpath>
+			<value>
+				<Flammability>0</Flammability>
+			</value>
+		</Operation>
+		<Operation Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="Roosterium"]/stuffProps/statFactors/Flammability</xpath>
+			<value>
+				<Flammability>0</Flammability>
+			</value>
+		</Operation>
+		<Operation Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="Tumblum"]/stuffProps/statFactors/Flammability</xpath>
+			<value>
+				<Flammability>0</Flammability>
+			</value>
+		</Operation>
+	</caseTrue>
+</Operation>
+
+	<!-- Patching - Enable Ores -->
+<Operation Class="XmlExtensions.OptionalPatch">
+    <modId>DragonsVerySpecialOresOriginal</modId>
+    <key>ToggleCaptolite</key>
+    <defaultValue>true</defaultValue>
+    <caseFalse>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Captolite"]/statBases/MarketValue</xpath>
+		</Operation>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Captolite"]/stuffProps/commonality</xpath>
+		</Operation>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Captolite"]/deepCommonality</xpath>
+		</Operation>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Captolite"]/deepLumpSizeRange</xpath>
+		</Operation>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Captolite"]/stuffProps/categories</xpath>
+		</Operation>
+		<Operation Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="Captolite"]/tradeability</xpath>
+			<value>
+				<tradeability>None</tradeability>
+			</value>
+		</Operation>
+		<Operation Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="MineableCaptolite"]/building</xpath>
+			<value>
+				<building>
+					<isNaturalRock>false</isNaturalRock>
+					<claimable>false</claimable>
+				</building>
+			</value>
+		</Operation>
+	</caseFalse>
+</Operation>
+
+<Operation Class="XmlExtensions.OptionalPatch">
+    <modId>DragonsVerySpecialOresOriginal</modId>
+    <key>ToggleLaatim</key>
+    <defaultValue>true</defaultValue>
+    <caseFalse>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Laatim"]/statBases/MarketValue</xpath>
+		</Operation>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Laatim"]/stuffProps/commonality</xpath>
+		</Operation>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Laatim"]/deepCommonality</xpath>
+		</Operation>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Laatim"]/deepLumpSizeRange</xpath>
+		</Operation>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Laatim"]/stuffProps/categories</xpath>
+		</Operation>
+		<Operation Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="Laatim"]/tradeability</xpath>
+			<value>
+				<tradeability>None</tradeability>
+			</value>
+		</Operation>
+		<Operation Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="MineableLaatim"]/building</xpath>
+			<value>
+				<building>
+					<isNaturalRock>false</isNaturalRock>
+					<claimable>false</claimable>
+				</building>
+			</value>
+		</Operation>
+    </caseFalse>
+</Operation>
+
+<Operation Class="XmlExtensions.OptionalPatch">
+    <modId>DragonsVerySpecialOresOriginal</modId>
+    <key>ToggleKeellikoi</key>
+    <defaultValue>true</defaultValue>
+    <caseFalse>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Keellikoi"]/statBases/MarketValue</xpath>
+		</Operation>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Keellikoi"]/stuffProps/commonality</xpath>
+		</Operation>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Keellikoi"]/deepCommonality</xpath>
+		</Operation>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Keellikoi"]/deepLumpSizeRange</xpath>
+		</Operation>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Keellikoi"]/stuffProps/categories</xpath>
+		</Operation>
+		<Operation Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="Keellikoi"]/tradeability</xpath>
+			<value>
+				<tradeability>None</tradeability>
+			</value>
+		</Operation>
+		<Operation Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="MineableKeellikoi"]/building</xpath>
+			<value>
+				<building>
+					<isNaturalRock>false</isNaturalRock>
+					<claimable>false</claimable>
+				</building>
+			</value>
+		</Operation>
+    </caseFalse>
+</Operation>
+
+<Operation Class="XmlExtensions.OptionalPatch">
+    <modId>DragonsVerySpecialOresOriginal</modId>
+    <key>ToggleRoosterium</key>
+    <defaultValue>true</defaultValue>
+    <caseFalse>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Roosterium"]/statBases/MarketValue</xpath>
+		</Operation>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Roosterium"]/stuffProps/commonality</xpath>
+		</Operation>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Roosterium"]/deepCommonality</xpath>
+		</Operation>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Roosterium"]/deepLumpSizeRange</xpath>
+		</Operation>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Roosterium"]/stuffProps/categories</xpath>
+		</Operation>
+		<Operation Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="Roosterium"]/tradeability</xpath>
+			<value>
+				<tradeability>None</tradeability>
+			</value>
+		</Operation>
+		<Operation Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="MineableRoosterium"]/building</xpath>
+			<value>
+				<building>
+					<isNaturalRock>false</isNaturalRock>
+					<claimable>false</claimable>
+				</building>
+			</value>
+		</Operation>
+    </caseFalse>
+</Operation>
+
+<Operation Class="XmlExtensions.OptionalPatch">
+    <modId>DragonsVerySpecialOresOriginal</modId>
+    <key>ToggleTumblum</key>
+    <defaultValue>true</defaultValue>
+    <caseFalse>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Tumblum"]/statBases/MarketValue</xpath>
+		</Operation>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Tumblum"]/stuffProps/commonality</xpath>
+		</Operation>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Tumblum"]/deepCommonality</xpath>
+		</Operation>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Tumblum"]/deepLumpSizeRange</xpath>
+		</Operation>
+		<Operation Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="Tumblum"]/stuffProps/categories</xpath>
+		</Operation>
+		<Operation Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="Tumblum"]/tradeability</xpath>
+			<value>
+				<tradeability>None</tradeability>
+			</value>
+		</Operation>
+		<Operation Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="MineableTumblum"]/building</xpath>
+			<value>
+				<building>
+					<isNaturalRock>false</isNaturalRock>
+					<claimable>false</claimable>
+				</building>
+			</value>
+		</Operation>
+    </caseFalse>
+</Operation>
+
+</Patch>

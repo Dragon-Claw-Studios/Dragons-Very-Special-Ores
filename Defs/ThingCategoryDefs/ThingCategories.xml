@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingCategoryDef>
+    <defName>DO_Metals</defName>
+    <label>Dragon's Ores</label>
+    <parent>ResourcesRaw</parent>
+    <resourceReadoutRoot>false</resourceReadoutRoot>
+    <iconPath>Things/Item/Resource/DO_Ore_Category/DO_Ore_Category</iconPath>
+  </ThingCategoryDef>
+
+</Defs>

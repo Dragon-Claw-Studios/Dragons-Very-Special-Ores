@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--============================ Captolite ===============================-->
+
+  <ThingDef ParentName="RockBase">
+    <defName>MineableCaptolite</defName>
+    <label>captolite ore</label>
+    <description>Rock containing bits of captolite.
+
+A material that is pleasant to work with, which also provides a sharp edge when used for weapons. Its color and rarity makes it rather sought after, but isn't as valuable as other rare materials. It is quite captivating to look at, making it an excellent choice for artwork. Its light nature, and willingness to fall apart, does make it rather impractical for use in defensive armor.
+
+Dedicated to: Captolamia</description>
+    <graphicData>
+      <texPath>Things/Building/Linked/RockFlecked_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <color>(123,4,3)</color> <!--#7b0403-->
+      <colorTwo>(211,52,9)</colorTwo> <!--#d33409-->
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>1450</MaxHitPoints>
+    </statBases>
+    <building>
+      <isResourceRock>true</isResourceRock>
+      <mineableThing>Captolite</mineableThing>
+      <mineableYield>142</mineableYield>
+      <mineableScatterCommonality>0.03</mineableScatterCommonality>
+      <mineableScatterLumpSizeRange>14~34</mineableScatterLumpSizeRange>
+    </building>
+  </ThingDef>
+  
+  <!--============================ Laatim ===============================-->
+
+  <ThingDef ParentName="RockBase">
+    <defName>MineableLaatim</defName>
+    <label>laatim ore</label>
+    <description>Rock containing bits of laatim.
+
+Laatim is slightly better than the average metal, making it applicable in many areas.
+
+Dedicated to: TeamLogicNL</description>
+    <graphicData>
+      <texPath>Things/Building/Linked/RockFlecked_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <color>(45,47,48)</color> <!--#2d2f30-->
+      <colorTwo>(136,69,9)</colorTwo> <!--#884509-->
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>1750</MaxHitPoints>
+    </statBases>
+    <building>
+      <isResourceRock>true</isResourceRock>
+      <mineableThing>Laatim</mineableThing>
+      <mineableYield>40</mineableYield>
+      <mineableScatterCommonality>0.08</mineableScatterCommonality>
+      <mineableScatterLumpSizeRange>10~24</mineableScatterLumpSizeRange>
+    </building>
+  </ThingDef>
+ 
+  
+  <!--============================ Keellikoi ===============================-->
+
+  <ThingDef ParentName="RockBase">
+    <defName>MineableKeellikoi</defName>
+    <label>keellikoi ore</label>
+    <description>Rock containing bits of keellikoi.
+
+An uncommon and sturdy material. Keellikoi can be used in armor for protection against blunt and heat based attacks, and its heavy weight also makes it a slow, but dangerous blunt weapon material. The material is best suited for erecting protective walls, as it is hard to carry around due to its weight.
+
+Dedicated to: KillerKeo</description>
+    <graphicData>
+      <texPath>Things/Building/Linked/RockFlecked_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <color>(53,14,14)</color> <!--#350e0e-->
+      <colorTwo>(209,163,1)</colorTwo> <!--#d1a301-->
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>6500</MaxHitPoints>
+    </statBases>
+    <building>
+      <isResourceRock>true</isResourceRock>
+      <mineableThing>Keellikoi</mineableThing>
+      <mineableYield>44</mineableYield>
+      <mineableScatterCommonality>0.3</mineableScatterCommonality>
+      <mineableScatterLumpSizeRange>24~36</mineableScatterLumpSizeRange>
+    </building>
+  </ThingDef>
+
+  <!--============================ Roosterium ===============================-->
+
+  <ThingDef ParentName="RockBase">
+    <defName>MineableRoosterium</defName>
+    <label>roosterium ore</label>
+    <description>Rock containing bits of roosterium.
+
+An exceptionally rare and unstable material, that when processed correctly can be turned into a deadly weapon. Without processing, the material can spontaneously combust when damaged sufficiently enough. This instability makes it a poor choice when protecting yourself against heat based attacks.
+	
+Dedicated to: AlexRoosterfield</description>
+    <graphicData>
+      <texPath>Things/Building/Linked/RockFlecked_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <color>(0,0,128)</color> <!--#000080-->
+      <colorTwo>(255,223,0)</colorTwo> <!--#ffdf00-->
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>2300</MaxHitPoints>
+    </statBases>
+    <building>
+      <isResourceRock>true</isResourceRock>
+      <mineableThing>Roosterium</mineableThing>
+      <mineableYield>36</mineableYield>
+      <mineableScatterCommonality>0.01</mineableScatterCommonality>
+      <mineableScatterLumpSizeRange>24~36</mineableScatterLumpSizeRange>
+    </building>
+  </ThingDef>
+  
+  <!--============================ Tumblum ===============================-->
+
+  <ThingDef ParentName="RockBase">
+    <defName>MineableTumblum</defName>
+    <label>tumblum ore</label>
+    <description>Rock containing bits of tumblum.
+
+Like a tumbling sattelite, this material has the colors of space, and can cause a lot of blunt trauma when present in a melee weapon. It is surprisingly light, and is an extremely poor choice as a piercing weapon. Its defensive capabilities are also poor, but is very sturdy when used in structures.
+
+Dedicated to: TumblingSatellite</description>
+    <graphicData>
+      <texPath>Things/Building/Linked/RockFlecked_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <color>(0,2,36)</color> <!--#000080-->
+      <colorTwo>(129,215,251)</colorTwo> <!--#ffdf00-->
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>6100</MaxHitPoints>
+    </statBases>
+    <building>
+      <isResourceRock>true</isResourceRock>
+      <mineableThing>Tumblum</mineableThing>
+      <mineableYield>34</mineableYield>
+      <mineableScatterCommonality>0.06</mineableScatterCommonality>
+      <mineableScatterLumpSizeRange>16~38</mineableScatterLumpSizeRange>
+    </building>
+  </ThingDef>  
+
+  
+</Defs>
